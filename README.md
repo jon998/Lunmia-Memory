@@ -22,7 +22,4 @@ For Android development, run:
 
 For iOS development, run:
   pnpm tauri ios dev
-
-
-
-by: Victor Yonatan
+by: Victor Yonatan, Maikol
