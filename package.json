@@ -1,20 +1,34 @@
 {
   "name": "lunmia-memory",
   "version": "0.1.0",
-  "description": "",
+  "description": "Captura ideas, notas y recordatorios en <3s con IA local en tu Mac. Nada se pierde.",
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
+    "dev": "vite dev --port 1420",
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build",
+    "reset:dev": "rm -rf \"$HOME/Library/Application Support/Lunmia Memory (dev)\" && echo \"BD de dev borrada. Corre pnpm tauri:dev para volver al onboarding.\"",
+    "reset:prod": "rm -rf \"$HOME/Library/Application Support/Lunmia Memory\" && echo \"BD de prod borrada. Cierra la app forzadamente y vuelve abrirla.\""
+
   },
   "license": "MIT",
   "dependencies": {
-    "@tauri-apps/api": "^2",
-    "@tauri-apps/plugin-opener": "^2"
+    "@tauri-apps/api": "~2.11",
+    "@tauri-apps/plugin-opener": "~2.5",
+    "@tauri-apps/plugin-global-shortcut": "~2.3",
+    "@tauri-apps/plugin-notification": "~2.3",
+    "@tauri-apps/plugin-autostart": "~2.5",
+    "@tauri-apps/plugin-dialog": "~2.4",
+    "@tauri-apps/plugin-fs": "~2.4",
+    "@tauri-apps/plugin-os": "~2.3",
+    "@tauri-apps/plugin-process": "~2.3",
+    "@lucide/svelte": "^1.0.0",
+    "dayjs": "^1.11.13"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.6",

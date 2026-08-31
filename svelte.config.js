@@ -1,6 +1,5 @@
-// Tauri doesn't have a Node.js server to do proper SSR
-// so we will use adapter-static to prerender the app (SSG)
-// See: https://v2.tauri.app/start/frontend/sveltekit/ for more info
+// Tauri no tiene servidor Node para SSR real: usamos adapter-static con
+// fallback SPA para servir rutas dinámicas (/entrada/[id]) desde el bundle.
 import adapter from "@sveltejs/adapter-static";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 
@@ -8,7 +7,10 @@ import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 const config = {
   preprocess: vitePreprocess(),
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      fallback: "index.html",
+      strict: false,
+    }),
   },
 };
 

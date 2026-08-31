@@ -1,0 +1,85 @@
+/* Lunmia Memory — tokens (Dirección B "Papel Lunar", ajuste gris) */
+:root {
+  /* Neutrales */
+  --papel: #F3F3F0;          /* fondo app */
+  --superficie: #FCFCFB;     /* cards, inputs */
+  --superficie-2: #ECECE8;   /* sidebar, zonas hundidas */
+  --tinta: #1F1F1D;          /* texto principal, botón primario */
+  --texto-2: #55544E;        /* texto secundario */
+  --apagado: #8A897F;        /* placeholders, metadatos */
+  --borde: #E0DFD9;
+  --borde-fuerte: #C9C8C0;
+  --tinta-hover: #3A3A36;
+
+  /* Acento */
+  --indigo: #4F46C9;         /* selección, links, foco, datos clave */
+  --indigo-hover: #3B34A8;
+  --indigo-suave: #EEEDFA;
+  --indigo-borde: #D6D4EE;
+
+  /* Semánticos */
+  --ok: #4C8C68;
+  --ok-suave: #E7F0EA;
+  --ok-borde: #C9DECF;
+  --ok-texto: #376A4E;
+
+  --alerta: #C08A3E;
+  --alerta-suave: #F7EEDF;
+  --alerta-borde: #E8D5B4;
+  --alerta-texto: #8A5F22;
+
+  --error: #C05246;
+  --error-suave: #F8EEEC;
+  --error-borde: #E4CBC7;
+
+  /* Colores de Espacio */
+  --esp-trabajo: #4F46C9;
+  --esp-personal: #C08A3E;
+  --esp-estudio: #4C8C68;
+  --esp-cliente: #3E7F8C;
+
+  /* Tipografía */
+  --font-display: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-ui: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Spline Sans Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* Radios */
+  --radio-s: 4px;
+  --radio-m: 6px;
+  --radio-l: 10px;
+  --radio-xl: 12px;
+
+  /* Sombras */
+  --sombra-card: 0 2px 12px rgba(40, 40, 30, 0.06);
+  --sombra-captura: 3px 3px 0 #E0DFD9;
+  --sombra-captura-fuerte: 6px 6px 0 rgba(31, 31, 29, 0.25);
+  --sombra-flotante: 0 16px 48px rgba(30, 30, 25, 0.18);
+  --sombra-flotante-fuerte: 0 24px 64px rgba(0, 0, 0, 0.35);
+  --sombra-tecla: 0 1.5px 0 #C9C8C0;
+}
+
+/* Reset compacto */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+button { font-family: inherit; }
+a { color: var(--indigo); text-decoration: none; }
+a:hover { color: var(--indigo-hover); }
+input, textarea, select { font-family: inherit; color: var(--tinta); }
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--indigo);
+  box-shadow: 0 0 0 3px var(--indigo-suave);
+}
+::placeholder { color: var(--apagado); }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: var(--borde-fuerte); border-radius: 4px; }
+::-webkit-scrollbar-track { background: transparent; }

@@ -1,0 +1,10 @@
+pub mod captura;
+pub mod contexto;
+pub mod entrada;
+pub mod espacio;
+pub mod evento;
+pub mod inbox;
+pub mod onboarding;
+pub mod permisos;
+pub mod proyecto;
+pub mod sistema;

@@ -1,0 +1,72 @@
+/* Utilidades globales — usar cuando repetir en Svelte no aporta. */
+
+.font-display { font-family: var(--font-display); }
+.font-mono { font-family: var(--font-mono); }
+
+.meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--apagado);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--indigo);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.kbd {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--tinta);
+  border: 1px solid var(--borde-fuerte);
+  border-radius: var(--radio-s);
+  padding: 2px 7px;
+  background: var(--superficie);
+  box-shadow: var(--sombra-tecla);
+  white-space: nowrap;
+  display: inline-block;
+  line-height: 1.4;
+}
+
+.card {
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-l);
+  box-shadow: var(--sombra-card);
+}
+
+.sunken {
+  background: var(--superficie-2);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-m);
+}
+
+.hidden { display: none !important; }
+
+.h1 { font-family: var(--font-display); font-size: 28px; font-weight: 700; letter-spacing: -0.01em; }
+.h2 { font-family: var(--font-display); font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+.h3 { font-family: var(--font-display); font-size: 15px; font-weight: 600; }
+
+.title-card { font-size: 15px; font-weight: 600; }
+.ui { font-size: 13px; }
+.secondary { font-size: 12px; color: var(--texto-2); }
+
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: 0.6; }
+
+/* Animaciones del design system */
+@keyframes lm-pop {
+  from { opacity: 0; transform: translate(-50%, -46%) scale(0.97); }
+  to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes lm-slide {
+  from { opacity: 0; transform: translateX(16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes lm-fade-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

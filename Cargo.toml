@@ -1,0 +1,12 @@
+[workspace]
+members = ["src-tauri"]
+resolver = "2"
+
+# Fix upstream: wry 0.53.4+ introdujo `+ Sync` en el callback de
+# `with_new_window_req_handler`, pero ningún tauri-runtime-wry publicado
+# hasta 2.11.x lo satisface. Pineamos wry a 0.53.3 y forzamos el
+# runtime a una versión conocida.
+[patch.crates-io]
+# Al día de hoy (2026-08) hay un mismatch entre tauri-runtime-wry publicado y
+# la última wry en crates.io. Ver notas de compatibilidad en el issue tracker
+# de tauri-apps si se rompe otra vez.

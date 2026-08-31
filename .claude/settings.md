@@ -1,48 +1,47 @@
-# Claude Code Settings - Lunmia Memory
+# Claude Code Settings — Lunmia Memory
 
-Este archivo contiene las reglas específicas para el desarrollo de Lunmia Memory.
+Reglas específicas del proyecto. Ver [`CLAUDE.md`](../CLAUDE.md) para el conjunto completo.
 
-## Referencia Principal
-Ver [CLAUDE.md](../CLAUDE.md) en la raíz del proyecto para las reglas completas.
+## Fases (roadmap del PRD §15.1)
 
-## Resumen de Reglas
-
-### Workflow Estricto
-1. **NO avanzar** a otra tarea sin marcar la actual como completada `[x]`
-2. **NO avanzar** a otra fase sin completar TODAS las tareas de la fase actual
-3. Cada tarea tiene **Code Review por Usuario** - NO continuar sin esta marca
-
-### Estructura de Tareas
 ```
 docs/
-├── 001-Fase1-SetupCore.md      (12 tareas)
-├── 002-Fase2-AgentesMCP.md     (15 tareas)
-├── 003-Fase3-IAProcesamiento.md (13 tareas)
-├── 004-Fase4-Busqueda.md       (9 tareas)
-├── 005-Fase5-UXOnboarding.md   (14 tareas)
-└── 006-Fase6-TestingPolish.md  (16 tareas)
+├── PRD-lunmia-memory-mvp1.md   Especificación cerrada
+├── 000-Fase0-Scheduler.md      Prototipo de riesgo — innegociable
+├── 001-Fase1-Captura.md        Atajo global, ventana flotante, persistencia
+├── 002-Fase2-Clasificacion.md  Cascada 0-3, taxonomía, contexto
+├── 003-Fase3-Bandeja.md        Resolución asistida, búsqueda
+└── 004-Fase4-Pulido.md         Modelos, OCR real, voz, Telegram, métricas
 ```
 
-### Consultas Obligatorias
-Antes de decisiones drásticas sobre:
-- Arquitectura
-- Dependencias principales
-- Modelo de datos
-- Seguridad
+## Reglas duras
+
+1. **NO avanzar** a otra tarea sin marcar la actual como completada `[x]`
+2. **NO avanzar** a otra fase sin completar todas las tareas de la fase actual
+3. Cada tarea tiene **Code Review por Usuario** — NO continuar sin esta marca
+4. **Nunca** modificar `contenido_original` (§5.3)
+5. La IA **propone, nunca aplica** (§5.1)
+6. **UUIDv7 + updated_at + tombstones** en toda tabla nueva (§5.6)
+
+## Consultas obligatorias
+
+Antes de decisiones sobre:
+- Arquitectura del proyecto (adaptadores de plataforma, esquema)
+- Dependencias principales del stack
+- Cambios al modelo de datos
+- Configuración de seguridad
+- Cambios al pipeline de clasificación
 
 **DEBE consultarse al usuario.**
 
-### Verificación Antes de Trabajar
-1. Leer archivo de fase actual
-2. Verificar tarea anterior completada `[x]`
-3. Verificar Code Review marcado `[x]`
-4. Solo entonces proceder
+## Comandos rápidos
 
-## Comandos Útiles
 ```bash
-# Ver tareas pendientes
-grep -r "\[ \]" docs/*.md | head -20
+# Estado del proyecto
+grep -r "\[ \]" docs/*.md | head -20   # tareas pendientes
+grep -r "\[x\]" docs/*.md | head -20   # completadas
 
-# Ver progreso por fase
-grep "Progreso:" docs/*.md
+# Desarrollo
+pnpm tauri dev
+cd src-tauri && cargo check
 ```

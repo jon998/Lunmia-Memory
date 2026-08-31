@@ -1,5 +1,4 @@
-// Tauri doesn't have a Node.js server to do proper SSR
-// so we will use adapter-static to prerender the app (SSG)
-// See: https://v2.tauri.app/start/frontend/sveltekit/ for more info
-export const prerender = true;
+// SPA mode for Tauri: no server-side rendering.
+export const prerender = false;
 export const ssr = false;
+export const trailingSlash = 'ignore';
